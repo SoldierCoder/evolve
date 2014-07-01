@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ed Drain's Resume</title>
+    <link rel="stylesheet" type="text/css" href="foundation.css">
+  </head>
+  <body>
+    <ul class="tabs" data-tab></ul>
+    <li class="tab-title"></li>
+    <a href=""></a>
+  <div class="section-container tabs" data-section="tabs">
+    <section>
+      <p class="title">
+        <a href="#">Angular</a>
+      </p>
+      <div class="content">angular content...</div>
+    </section>
+    <section>
+      <p class="title">
+        <a href="#">Testing</a>
+      </p>
+      <div class="content">testing content</div>
+    </section>
+  </div>
+    <div ng-app="resume"> 
+      <script type="text/javascript" src="js/angular.min.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+      <div ng-controller="ResumeController as resume">
+        <div ng-repeat="item in resume.items">
+          <h3> {{item.name}} </h3>
+          <br><img ng-src="images/{{item.image}}"/>          
+          <br>{{item.criteria}}
+          <br>issued: {{item.issued}}
+          <br><button ng-show="item.canDemonstrate"> Demonstrate some code </button>
+        </div>  
+      </div>
+    </div>
+  </body>
+</html>
